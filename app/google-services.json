@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "931037947480",
+    "project_id": "geniecall-87f4f",
+    "storage_bucket": "geniecall-87f4f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:931037947480:android:8f542c305002bc2dcd4c2d",
+        "android_client_info": {
+          "package_name": "com.example.ginicall"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5bFzuibZ4LLKFwNy_FMrXRqsysJD-sK0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
