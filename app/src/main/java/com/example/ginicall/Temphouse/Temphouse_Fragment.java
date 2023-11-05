@@ -9,58 +9,39 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.ginicall.R;
+import com.kakao.vectormap.KakaoMap;
+import com.kakao.vectormap.KakaoMapReadyCallback;
+import com.kakao.vectormap.MapLifeCycleCallback;
+import com.kakao.vectormap.MapView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Temphouse_Fragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class Temphouse_Fragment extends Fragment {
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public Temphouse_Fragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Temphouse_Fragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static Temphouse_Fragment newInstance(String param1, String param2) {
-        Temphouse_Fragment fragment = new Temphouse_Fragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
+    private View view;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_temphouse_, container, false);
+        view =  inflater.inflate(R.layout.fragment_temphouse_, container, false);
+        MapView mapView = view.findViewById(R.id.temphouse_map_view);
+        mapView.start(new MapLifeCycleCallback() {
+            @Override
+            public void onMapDestroy() {
+                // 지도 API 가 정상적으로 종료될 때 호출됨
+            }
+
+            @Override
+            public void onMapError(Exception error) {
+                // 인증 실패 및 지도 사용 중 에러가 발생할 때 호출됨
+            }
+        }, new KakaoMapReadyCallback() {
+            @Override
+            public void onMapReady(KakaoMap kakaoMap) {
+                // 인증 후 API 가 정상적으로 실행될 때 호출됨
+            }
+        });
+        return view;
     }
 }
