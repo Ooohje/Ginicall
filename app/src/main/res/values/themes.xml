@@ -16,6 +16,11 @@
         <item name="mapTextStrokeWidth">1</item>
         <item name="mapTextStrokeColor">#00DB5461</item>
     </style>
+    <style name="some_id">
+        <item name="android:textSize">20sp</item>
+        <item name="android:letterSpacing">-0.03</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
 
     <style name="Theme.Ginicall" parent="Base.Theme.Ginicall" />
 </resources>
