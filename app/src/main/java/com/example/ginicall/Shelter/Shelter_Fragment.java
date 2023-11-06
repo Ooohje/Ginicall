@@ -79,7 +79,8 @@ public class Shelter_Fragment extends Fragment {
     }
 
     private void locateMarker(KakaoMap map) {
-        db.collection("Shelter_Info").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+        // TODO : 임시로 경북대 근처 좌표로 설정 (사용량 많이 나와서) -> 나중에는 북구 & 동구 데이터인 "Shelter_Info"로 수정하기
+        db.collection("Shelter_for_test").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if (task.isSuccessful()) {
@@ -90,7 +91,7 @@ public class Shelter_Fragment extends Fragment {
 
                         LatLng pos = LatLng.from(lat,lng);
                         LabelStyles styles = map.getLabelManager()
-                                .addLabelStyles(LabelStyles.from(LabelStyle.from(R.drawable.blue_marker)
+                                .addLabelStyles(LabelStyles.from(LabelStyle.from(R.drawable.new_marker)
                                         .setIconTransition(LabelTransition.from(Transition.None, Transition.None))));
 
                         // 라벨 생성
