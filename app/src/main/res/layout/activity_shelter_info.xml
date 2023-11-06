@@ -64,7 +64,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="16dp"
-                android:fontFamily="@font/GmarketSansTTFBold"
+                android:fontFamily="@font/gmarket_sans_ttf_bold"
                 android:gravity="center_horizontal|top"
                 android:text="신암초등학교"
                 android:textAppearance="@style/info_title" />
@@ -77,7 +77,7 @@
                 android:layout_alignParentTop="true"
                 android:gravity="center_horizontal|top"
                 android:text="2.5km(도보 25분소요)"
-                android:fontFamily="@font/GmarketSansTTFMedium"
+                android:fontFamily="@font/gmarket_sans_ttf_medium"
                 android:textAppearance="@style/info_dist" />
 
             <View
@@ -98,7 +98,7 @@
                 android:layout_marginLeft="24dp"
                 android:text="주소 : 대구광역시 북구 경대로 21"
                 android:textAppearance="@style/info_detail"
-                android:fontFamily="@font/GmarketSansTTFMedium"
+                android:fontFamily="@font/gmarket_sans_ttf_medium"
                 android:layout_marginBottom="7dp"
                 android:gravity="left" />
             <TextView
@@ -108,7 +108,7 @@
                 android:layout_marginLeft="24dp"
                 android:text="대피소 유형 : 옥외 대피소 - 운동장"
                 android:textAppearance="@style/info_detail"
-                android:fontFamily="@font/GmarketSansTTFMedium"
+                android:fontFamily="@font/gmarket_sans_ttf_medium"
                 android:layout_marginBottom="7dp"
                 android:gravity="left" />
             <TextView
@@ -118,7 +118,7 @@
                 android:layout_marginLeft="24dp"
                 android:text="수용 인원 : 5,291 명"
                 android:textAppearance="@style/info_detail"
-                android:fontFamily="@font/GmarketSansTTFMedium"
+                android:fontFamily="@font/gmarket_sans_ttf_medium"
                 android:layout_marginBottom="7dp"
                 android:gravity="left" />
             <TextView
@@ -128,7 +128,7 @@
                 android:layout_marginLeft="24dp"
                 android:text="수용 면적 : 17,462m"
                 android:textAppearance="@style/info_detail"
-                android:fontFamily="@font/GmarketSansTTFMedium"
+                android:fontFamily="@font/gmarket_sans_ttf_medium"
                 android:layout_marginBottom="7dp"
                 android:gravity="left" />
 
@@ -156,7 +156,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:fontFamily="@font/GmarketSansTTFMedium"
+                        android:fontFamily="@font/gmarket_sans_ttf_medium"
                         android:text="전화"
                         android:textAppearance="@style/info_detail" />
                 </LinearLayout>
@@ -179,7 +179,7 @@
                         android:layout_height="wrap_content"
                         android:text="지도"
                         android:textAppearance="@style/info_detail"
-                        android:fontFamily="@font/GmarketSansTTFMedium"
+                        android:fontFamily="@font/gmarket_sans_ttf_medium"
                         android:layout_gravity="center"/>
                 </LinearLayout>
 
@@ -224,7 +224,7 @@
                     android:layout_alignParentTop="true"
                     android:text="현재 교통 현황\n(마비된 도로, 교통 상황)"
                     android:textAppearance="@style/info_warning"
-                    android:fontFamily="@font/GmarketSansTTFBold"
+                    android:fontFamily="@font/gmarket_sans_ttf_bold"
                     android:gravity="top" />
             </LinearLayout>
 
@@ -243,7 +243,7 @@
                     android:text="신암로 16번 도로 : 붕괴 위험"
                     android:layout_marginBottom="10dp"
                     android:textAppearance="@style/info_detail"
-                    android:fontFamily="@font/GmarketSansTTFMedium"
+                    android:fontFamily="@font/gmarket_sans_ttf_medium"
                     android:gravity="center_vertical"/>
 
                 <TextView
@@ -252,7 +252,7 @@
                     android:layout_marginLeft="19dp"
                     android:text="00건물 붕괴 : 근처 접근 금지\n\t\t\t\t대피시 통행 각별히 주의"
                     android:textAppearance="@style/info_detail"
-                    android:fontFamily="@font/GmarketSansTTFMedium"
+                    android:fontFamily="@font/gmarket_sans_ttf_medium"
                     android:gravity="center_vertical"/>
 
             </LinearLayout>

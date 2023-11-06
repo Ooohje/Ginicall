@@ -24,6 +24,7 @@
         android:text="근처 대피소 위치 안내"
         android:textSize="30dp"
         android:textColor="@color/white"
+        android:fontFamily="@font/gmarket_sans_ttf_bold"
         app:layout_constraintBottom_toBottomOf="@+id/shelter_top_view"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
