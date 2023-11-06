@@ -3,6 +3,7 @@ package com.example.ginicall.Shelter;
 import static android.graphics.Bitmap.createBitmap;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 
@@ -115,7 +116,10 @@ public class Shelter_Fragment extends Fragment {
             public void onLabelClicked(KakaoMap kakaoMap, LabelLayer layer, Label label) {
                 // 라벨 클릭 시 카메라 이동
                 String documentID = label.getLabelId();
-                Toast.makeText(context, "현재 지역 ID : " + documentID, Toast.LENGTH_SHORT).show();
+
+                Intent it = new Intent(context, Shelter_Info_Activity.class);
+                it.putExtra("documentID", documentID);
+                startActivity(it);
             }
         });
     }
