@@ -4,6 +4,18 @@
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
+    <style name="labelTextStyle_1" parent="LabelTextStyle">
+        <item name="mapTextSize">32</item>
+        <item name="mapTextColor">#DB5461</item>
+        <item name="mapTextStrokeWidth">1</item>
+        <item name="mapTextStrokeColor">#DB5461</item>
+    </style>
+    <style name="labelTextStyle_2" parent="LabelTextStyle">
+        <item name="mapTextSize">32</item>
+        <item name="mapTextColor">#00DB5461</item>
+        <item name="mapTextStrokeWidth">1</item>
+        <item name="mapTextStrokeColor">#00DB5461</item>
+    </style>
 
     <style name="Theme.Ginicall" parent="Base.Theme.Ginicall" />
 </resources>

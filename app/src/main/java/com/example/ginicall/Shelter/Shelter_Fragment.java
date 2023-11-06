@@ -2,6 +2,7 @@ package com.example.ginicall.Shelter;
 
 import static android.graphics.Bitmap.createBitmap;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 
@@ -13,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.ginicall.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -34,12 +36,14 @@ import com.kakao.vectormap.label.LabelLayerOptions;
 import com.kakao.vectormap.label.LabelOptions;
 import com.kakao.vectormap.label.LabelStyle;
 import com.kakao.vectormap.label.LabelStyles;
+import com.kakao.vectormap.label.LabelTextStyle;
 import com.kakao.vectormap.label.LabelTransition;
 import com.kakao.vectormap.label.OrderingType;
 import com.kakao.vectormap.label.Transition;
 
 public class Shelter_Fragment extends Fragment {
     private View view;
+    private Context context;
     private KakaoMap kakaoMap;
     private LabelLayer labelLayer;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -53,6 +57,7 @@ public class Shelter_Fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view =  inflater.inflate(R.layout.fragment_shelter_, container, false);
+        context = container.getContext();
         MapView mapView = view.findViewById(R.id.shelter_map_view);
         mapView.start(new MapLifeCycleCallback() {
             @Override
@@ -72,6 +77,7 @@ public class Shelter_Fragment extends Fragment {
                 kakaoMap = map;
                 labelLayer = kakaoMap.getLabelManager().getLayer();
                 locateMarker(map);
+                moveCamera(LatLng.from(35.88900, 128.6103));
             }
         });
 
@@ -88,20 +94,34 @@ public class Shelter_Fragment extends Fragment {
 
                         double lat = document.getDouble("위도");
                         double lng = document.getDouble("경도");
+                        String name = document.getString("지진해일대피소명");
 
                         LatLng pos = LatLng.from(lat,lng);
-                        LabelStyles styles = map.getLabelManager()
-                                .addLabelStyles(LabelStyles.from(LabelStyle.from(R.drawable.new_marker)
-                                        .setIconTransition(LabelTransition.from(Transition.None, Transition.None))));
+                        LabelStyles styles = map.getLabelManager().addLabelStyles(LabelStyles.from(
+                                LabelStyle.from(R.drawable.new_marker).setZoomLevel(5),
+                                LabelStyle.from(R.drawable.new_marker).setTextStyles(LabelTextStyle.from(context, R.style.labelTextStyle_1)).setZoomLevel(15)));
 
                         // 라벨 생성
-                        labelLayer.addLabel(LabelOptions.from(document.getId(), pos).setStyles(styles));
+                        labelLayer.addLabel(LabelOptions.from(document.getId(), pos).setStyles(styles).setTexts(name));
                     }
                 } else {
                     Log.w("GetDataFromFirestore", "Error getting documents.", task.getException());
                 }
             }
         });
+
+        kakaoMap.setOnLabelClickListener(new KakaoMap.OnLabelClickListener() {
+            @Override
+            public void onLabelClicked(KakaoMap kakaoMap, LabelLayer layer, Label label) {
+                // 라벨 클릭 시 카메라 이동
+                String documentID = label.getLabelId();
+                Toast.makeText(context, "현재 지역 ID : " + documentID, Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void moveCamera(LatLng position) {
+        kakaoMap.moveCamera(CameraUpdateFactory.newCenterPosition(position),CameraAnimation.from(10, false,false));
     }
 
 }
