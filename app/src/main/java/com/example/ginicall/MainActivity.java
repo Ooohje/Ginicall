@@ -2,16 +2,21 @@ package com.example.ginicall;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
+import android.Manifest;
 
 import com.example.ginicall.Shelter.Shelter_Fragment;
 import com.example.ginicall.Temphouse.Temphouse_Fragment;
@@ -19,6 +24,7 @@ import com.example.ginicall.Tip.Tip_Fragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.kakao.vectormap.KakaoMap;
 import com.kakao.vectormap.KakaoMapReadyCallback;
+import com.kakao.vectormap.LatLng;
 import com.kakao.vectormap.MapLifeCycleCallback;
 import com.kakao.vectormap.MapView;
 
@@ -30,14 +36,24 @@ public class MainActivity extends AppCompatActivity {
     Shelter_Fragment shelter_frag = new Shelter_Fragment();
     Temphouse_Fragment temphous_frag = new Temphouse_Fragment();
     Tip_Fragment tip_frag = new Tip_Fragment();
+    public static Context mContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mContext = this;
+
         //다크모드 해제
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
         navbar = (BottomNavigationView) findViewById(R.id.activity_main_navbar);
+
+        //위치 권한 확인 & 요청
+        int permissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION);
+        if(permissionCheck == PackageManager.PERMISSION_DENIED){
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 0);
+        }
 
         changeFragment(R.id.main_fragment, shelter_frag);
         navbar.setOnItemSelectedListener(item -> {
@@ -69,4 +85,24 @@ public class MainActivity extends AppCompatActivity {
         ft.commit();
     }
 
+    /** 두 좌표(위도, 경도) 사이의 거리를 계산하는 함수
+     *  @detail 참고 내용 : https://en.wikipedia.org/wiki/Haversine_formula
+     *  @param latA a의 위도
+     *  @param lngA a의 경도
+     *  @param latB b의 위도
+     *  @param lngB b의 경도
+     *  @return 두 지점 사이의 거리 (단위 : m) */
+    public double calculate_distance(double latA, double lngA, double latB, double lngB) {
+        int R = 6371000; // 지구의 반지름 (단위 : m)
+        double delta_lat = Math.toRadians(latB - latA);
+        double delta_lon = Math.toRadians(lngB - lngA);
+
+        double hav_lat = Math.sin(delta_lat / 2) * Math.sin(delta_lat / 2);
+        double hav_lon = Math.sin(delta_lon / 2) * Math.sin(delta_lon / 2);
+
+        double hav_theta = hav_lat + Math.cos(Math.toRadians(latA)) * Math.cos(Math.toRadians(latB)) * hav_lon;
+        double theta = 2 * Math.atan2(Math.sqrt(hav_theta), Math.sqrt(1 - hav_theta));
+
+        return R * theta;
+    }
 }
