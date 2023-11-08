@@ -49,6 +49,9 @@ public class Shelter_Fragment extends Fragment {
     private LabelLayer labelLayer;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
 
+    // TODO : 임시로 경북대 근처 좌표로 설정 (사용량 많이 나와서) -> 나중에는 북구 & 동구 데이터인 "Shelter_Info"로 수정하기
+    private String collectionName = "Shelter_for_test";
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,8 +89,8 @@ public class Shelter_Fragment extends Fragment {
     }
 
     private void locateMarker(KakaoMap map) {
-        // TODO : 임시로 경북대 근처 좌표로 설정 (사용량 많이 나와서) -> 나중에는 북구 & 동구 데이터인 "Shelter_Info"로 수정하기
-        db.collection("Shelter_for_test").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+
+        db.collection(collectionName).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if (task.isSuccessful()) {
@@ -119,6 +122,7 @@ public class Shelter_Fragment extends Fragment {
 
                 Intent it = new Intent(context, Shelter_Info_Activity.class);
                 it.putExtra("documentID", documentID);
+                it.putExtra("collectionName", collectionName);
                 startActivity(it);
             }
         });
