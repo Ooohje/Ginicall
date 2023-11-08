@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Temphouse.Temphouse_Info_Activity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/shelter_info_top_rect"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/temphouse_info_backButton"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="12dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:background="@drawable/shelter_info_back_button" />
+
+        <View
+            android:id="@+id/rectangle_7"
+            android:layout_width="150dp"
+            android:layout_height="155dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="125dp"
+            android:background="@drawable/shelter_info_school_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/temphouse_info_mainlayout"
+            android:layout_width="348dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="289dp"
+            android:background="@drawable/round_outline"
+            android:orientation="vertical"
+            android:paddingBottom="10dp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/temphouse_info_title_tv"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/gmarket_sans_ttf_bold"
+                android:gravity="center_horizontal|top"
+                android:text="신암초등학교"
+                android:textAppearance="@style/info_title" />
+
+            <TextView
+                android:id="@+id/temphouse_info_dist_tv"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:gravity="center_horizontal|top"
+                android:text="2.5km(도보 25분소요)"
+                android:fontFamily="@font/gmarket_sans_ttf_medium"
+                android:textAppearance="@style/info_dist" />
+
+            <View
+                android:id="@+id/line_5"
+                android:layout_width="340dp"
+                android:layout_height="1dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="13dp"
+                android:background="@drawable/line_5" />
+
+            <TextView
+                android:id="@+id/temphouse_info_address_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:text="주소 : 대구광역시 북구 경대로 21"
+                android:textAppearance="@style/info_detail"
+                android:fontFamily="@font/gmarket_sans_ttf_medium"
+                android:layout_marginBottom="7dp"
+                android:gravity="left" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/temphouse_info_sublayout"
+            android:layout_width="361dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="21dp"
+            android:background="@drawable/round_outline"
+            android:orientation="vertical"
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.68"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/temphouse_info_mainlayout">
+
+            <LinearLayout
+                android:id="@+id/rectangle_8"
+                android:layout_width="341dp"
+                android:layout_height="58dp"
+                android:layout_gravity="center"
+                android:background="@drawable/shelter_info_traffic_rect"
+                android:gravity="left|center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="21dp">
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:src="@drawable/shelter_info_warning_image" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="17dp"
+                    android:fontFamily="@font/gmarket_sans_ttf_bold"
+                    android:gravity="top"
+                    android:text="현재 교통 현황\n(마비된 도로, 교통 상황)"
+                    android:textAppearance="@style/info_warning" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/temphouse_info_warning_layout"
+                android:layout_width="339dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="19dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/gmarket_sans_ttf_medium"
+                    android:gravity="center_vertical"
+                    android:text="신암로 16번 도로 : 붕괴 위험"
+                    android:textAppearance="@style/info_detail" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="19dp"
+                    android:fontFamily="@font/gmarket_sans_ttf_medium"
+                    android:gravity="center_vertical"
+                    android:text="00건물 붕괴 : 근처 접근 금지\n\t\t\t\t대피시 통행 각별히 주의"
+                    android:textAppearance="@style/info_detail" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
