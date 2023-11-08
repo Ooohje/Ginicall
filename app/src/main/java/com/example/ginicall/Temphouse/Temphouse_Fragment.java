@@ -123,4 +123,5 @@ public class Temphouse_Fragment extends Fragment {
     private void moveCamera(LatLng position) {
         kakaoMap.moveCamera(CameraUpdateFactory.newCenterPosition(position), CameraAnimation.from(10, false,false));
     }
+
 }
