@@ -1,5 +1,8 @@
 package com.example.ginicall;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.app.ActivityCompat;
@@ -9,6 +12,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
@@ -17,11 +21,15 @@ import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
 import android.Manifest;
+import android.widget.Toast;
 
 import com.example.ginicall.Shelter.Shelter_Fragment;
 import com.example.ginicall.Temphouse.Temphouse_Fragment;
 import com.example.ginicall.Tip.Tip_Fragment;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.kakao.vectormap.KakaoMap;
 import com.kakao.vectormap.KakaoMapReadyCallback;
 import com.kakao.vectormap.LatLng;
@@ -37,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
     Temphouse_Fragment temphous_frag = new Temphouse_Fragment();
     Tip_Fragment tip_frag = new Tip_Fragment();
     public static Context mContext;
+    private final String TAG = "MyFirebaseMsgService";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +63,25 @@ public class MainActivity extends AppCompatActivity {
         if(permissionCheck == PackageManager.PERMISSION_DENIED){
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 0);
         }
+        // 알림 권한 확인 & 요청
+        if(ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) == PackageManager.PERMISSION_DENIED){
+            Log.d("권한" , "알림 권한 없음");
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.POST_NOTIFICATIONS}, 0);
+        }
+
+        // FCM 토큰 가져오기
+        FirebaseMessaging.getInstance().getToken().addOnCompleteListener(new OnCompleteListener<String>() {
+            @Override
+            public void onComplete(@NonNull Task<String> task) {
+                if (!task.isSuccessful()) {
+                    Log.w(TAG, "Fetching FCM registration token failed", task.getException());
+                    return;
+                }
+
+                String token = task.getResult();
+                Log.d(TAG, "FCM registration token : " + token);
+            }
+        });
 
         changeFragment(R.id.main_fragment, shelter_frag);
         navbar.setOnItemSelectedListener(item -> {

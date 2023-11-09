@@ -44,4 +44,12 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     implementation ("com.kakao.maps.open:android:2.6.0")
+
+    implementation("com.google.firebase:firebase-bom:32.5.0")
+    // 푸시 라이브러리
+    implementation("com.google.firebase:firebase-messaging:23.0.0")
+    // JSON의 자바 오브젝트의 직렬화, 역직렬화
+    implementation("com.google.code.gson:gson:2.9.0")
+    // okhttp3
+    implementation("com.squareup.okhttp3:okhttp:3.10.0")
 }
