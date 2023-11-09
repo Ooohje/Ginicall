@@ -40,10 +40,11 @@
 
         <Button
             android:id="@+id/warning_button"
-            android:layout_width="155dp"
-            android:layout_height="129dp"
+            android:layout_width="94dp"
+            android:layout_height="76dp"
             android:text="Button"
-            android:visibility="invisible" />
+            android:background="@android:color/transparent"
+            android:textColor="@android:color/transparent" />
     </com.kakao.vectormap.MapView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
