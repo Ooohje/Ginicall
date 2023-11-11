@@ -46,6 +46,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             double lat = Double.parseDouble(data.get("lat"));
             double lng = Double.parseDouble(data.get("lng"));
             double mt = Double.parseDouble(data.get("mt"));
+            double depth = Double.parseDouble(data.get("depth"));
 
             Log.d(TAG, "Message data: (" + lat + ", " + lng + "), " + mt);
 
@@ -57,6 +58,8 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 intent.putExtra("eq_lat", lat);
                 intent.putExtra("eq_lng", lng);
                 intent.putExtra("eq_mt", mt);
+                intent.putExtra("eq_depth", depth);
+                intent.putExtra("body", remoteMessage.getNotification().getBody());
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
             }
