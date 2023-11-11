@@ -14,74 +14,73 @@
         android:scaleType="fitXY"
         android:src="@drawable/tip_top_rect" />
 
-    <androidx.cardview.widget.CardView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="16dp"
-        android:cardCornerRadius="12dp"
-        android:cardElevation="4dp">
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/round_outline"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="10dp">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/Event_Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/gmarket_sans_ttf_bold"
+            android:text="지진 발생"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="48sp" />
+
+        <ImageView
+            android:id="@+id/imageView2"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:padding="16dp">
-
-            <TextView
-                android:id="@+id/Event_Text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:fontFamily="@font/gmarket_sans_ttf_bold"
-                android:text="지진 발생"
-                android:textColor="@android:color/holo_red_dark"
-                android:textSize="48sp" />
-
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="match_parent"
-                android:layout_height="202dp"
-                app:srcCompat="@drawable/warning" />
+            android:layout_height="202dp"
+            app:srcCompat="@drawable/warning" />
 
 
-            <TextView
-                android:id="@+id/From_Text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:fontFamily="@font/gmarket_sans_ttf_bold"
-                android:text="강화 서쪽 해역서 지진 발생"
-                android:textSize="16sp" />
+        <TextView
+            android:id="@+id/From_Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/gmarket_sans_ttf_bold"
+            android:text="강화 서쪽 해역서 지진 발생"
+            android:textSize="25sp" />
 
-            <TextView
-                android:id="@+id/Magnitude_Text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:fontFamily="@font/gmarket_sans_ttf_bold"
-                android:text="규모 4.5"
-                android:textColor="@android:color/holo_red_dark"
-                android:textSize="20sp" />
+        <TextView
+            android:id="@+id/Magnitude_Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/gmarket_sans_ttf_bold"
+            android:text="규모 4.5"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="25sp" />
 
-            <TextView
-                android:id="@+id/Depth_Text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:fontFamily="@font/gmarket_sans_ttf_bold"
-                android:text="진원 깊이 32KM" />
+        <TextView
+            android:id="@+id/Depth_Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/gmarket_sans_ttf_bold"
+            android:text="진원 깊이 32KM"
+            android:textSize="25sp"/>
 
-            <Button
-                android:id="@+id/button"
-                android:layout_width="183dp"
-                android:layout_height="58dp"
-                android:layout_marginTop="16dp"
-                android:backgroundTint="#062E11"
-                android:text="행동 요령 보기"
-                android:textSize="20sp" />
+        <Button
+            android:id="@+id/button"
+            android:layout_width="183dp"
+            android:layout_height="58dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#062E11"
+            android:text="행동 요령 보기"
+            android:textSize="20sp" />
 
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
+    </LinearLayout>
 </LinearLayout>
