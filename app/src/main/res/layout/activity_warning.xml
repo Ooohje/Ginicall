@@ -1,94 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
-
 
     <ImageView
         android:id="@+id/Warning_top"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scaleType="fitXY"
-        android:src="@drawable/tip_top_rect"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:src="@drawable/tip_top_rect" />
 
-    <ImageView
-        android:id="@+id/Warning_bottom"
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="560dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/warning"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/Warning_top"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="54dp" />
+        android:layout_height="match_parent"
+        android:layout_margin="16dp"
+        android:cardCornerRadius="12dp"
+        android:cardElevation="4dp">
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="183dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="28dp"
-        android:backgroundTint="#062E11"
-        android:backgroundTintMode="src_over"
-        android:text="행동 요령 보기"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="@id/Warning_bottom"
-        app:layout_constraintStart_toStartOf="@id/Warning_bottom"
-        app:layout_constraintTop_toBottomOf="@id/Depth_Text" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="16dp">
 
-    <TextView
-        android:id="@+id/Event_Text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
-        android:layout_marginBottom="176dp"
-        android:fontFamily="@font/gmarket_sans_ttf_bold"
-        android:text="지진 발생"
-        android:textColor="@android:color/holo_red_dark"
-        android:textSize="40dp"
-        app:layout_constraintBottom_toTopOf="@+id/From_Text"
-        app:layout_constraintEnd_toEndOf="@+id/Warning_bottom"
-        app:layout_constraintStart_toStartOf="@+id/Warning_bottom"
-        app:layout_constraintTop_toBottomOf="@+id/Warning_top"
-        app:layout_constraintVertical_bias="0.0" />
+            <TextView
+                android:id="@+id/Event_Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/gmarket_sans_ttf_bold"
+                android:text="지진 발생"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="48sp" />
 
-    <TextView
-        android:id="@+id/From_Text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:fontFamily="@font/gmarket_sans_ttf_bold"
-        android:text="강화 서쪽 해역서 지진 발생"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/Magnitude_Text"
-        app:layout_constraintEnd_toEndOf="@+id/Warning_bottom"
-        app:layout_constraintStart_toStartOf="@+id/Warning_bottom" />
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="match_parent"
+                android:layout_height="202dp"
+                app:srcCompat="@drawable/warning" />
 
-    <TextView
-        android:id="@+id/Magnitude_Text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="28dp"
-        android:fontFamily="@font/gmarket_sans_ttf_bold"
-        android:text="규모 4.5"
-        android:textColor="@android:color/holo_red_dark"
-        app:layout_constraintBottom_toTopOf="@+id/Depth_Text"
-        app:layout_constraintEnd_toEndOf="@+id/Warning_bottom"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="@+id/Warning_bottom" />
 
-    <TextView
-        android:id="@+id/Depth_Text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:fontFamily="@font/gmarket_sans_ttf_bold"
-        android:text="진원 깊이 32KM"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintEnd_toEndOf="@+id/Warning_bottom"
-        app:layout_constraintStart_toStartOf="@+id/Warning_bottom" />
+            <TextView
+                android:id="@+id/From_Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/gmarket_sans_ttf_bold"
+                android:text="강화 서쪽 해역서 지진 발생"
+                android:textSize="16sp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/Magnitude_Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/gmarket_sans_ttf_bold"
+                android:text="규모 4.5"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/Depth_Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/gmarket_sans_ttf_bold"
+                android:text="진원 깊이 32KM" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="183dp"
+                android:layout_height="58dp"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="#062E11"
+                android:text="행동 요령 보기"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
