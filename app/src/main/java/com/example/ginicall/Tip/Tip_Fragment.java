@@ -29,6 +29,47 @@ public class Tip_Fragment extends Fragment {
         view =  inflater.inflate(R.layout.fragment_tip_, container, false);
 
 
+        view.findViewById(R.id.tip_normal_title1).setOnClickListener(v -> {
+            if(view.findViewById(R.id.tip_normal_contents1).getVisibility() == v.GONE){
+                view.findViewById(R.id.tip_normal_contents1).setVisibility(v.VISIBLE);
+            }else{
+                view.findViewById(R.id.tip_normal_contents1).setVisibility(v.GONE);
+            }
+        });
+
+        view.findViewById(R.id.tip_normal_title2).setOnClickListener(v -> {
+            if(view.findViewById(R.id.tip_normal_contents2).getVisibility() == v.GONE){
+                view.findViewById(R.id.tip_normal_contents2).setVisibility(v.VISIBLE);
+            }else{
+                view.findViewById(R.id.tip_normal_contents2).setVisibility(v.GONE);
+            }
+        });
+
+        view.findViewById(R.id.tip_normal_title3).setOnClickListener(v -> {
+            if(view.findViewById(R.id.tip_normal_contents3).getVisibility() == v.GONE){
+                view.findViewById(R.id.tip_normal_contents3).setVisibility(v.VISIBLE);
+            }else{
+                view.findViewById(R.id.tip_normal_contents3).setVisibility(v.GONE);
+            }
+        });
+
+        view.findViewById(R.id.tip_normal_title4).setOnClickListener(v -> {
+            if(view.findViewById(R.id.tip_normal_contents4).getVisibility() == v.GONE){
+                view.findViewById(R.id.tip_normal_contents4).setVisibility(v.VISIBLE);
+            }else{
+                view.findViewById(R.id.tip_normal_contents4).setVisibility(v.GONE);
+            }
+        });
+
+        view.findViewById(R.id.tip_normal_title5).setOnClickListener(v -> {
+            if(view.findViewById(R.id.tip_normal_contents5).getVisibility() == v.GONE){
+                view.findViewById(R.id.tip_normal_contents5).setVisibility(v.VISIBLE);
+            }else{
+                view.findViewById(R.id.tip_normal_contents5).setVisibility(v.GONE);
+            }
+        });
+
+
 
 
         return view;

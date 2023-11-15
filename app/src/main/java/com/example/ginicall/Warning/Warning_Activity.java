@@ -28,6 +28,8 @@ public class Warning_Activity extends AppCompatActivity {
         mt_tv = (TextView)findViewById(R.id.Magnitude_Text);
         depth_tv = (TextView)findViewById(R.id.Depth_Text);
 
+        getWindow().setStatusBarColor(getResources().getColor(R.color.sub_color));
+
         Intent intent = getIntent();
         double lat = intent.getDoubleExtra("eq_lat", 0);
         double lng = intent.getDoubleExtra("eq_lng", 0);
