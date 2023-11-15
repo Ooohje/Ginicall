@@ -18,6 +18,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Ginicall"
         tools:targetApi="31">
+        <activity
+            android:name=".Warning.Warning_Tip_Activity"
+            android:exported="false" />
+
         <service
             android:name=".MyFirebaseMessagingService"
             android:enabled="true"
