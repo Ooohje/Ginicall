@@ -36,6 +36,5 @@ public class Warning_Activity extends AppCompatActivity {
         depth_tv.setText("진원 깊이 : "+depth+"km");
 
         double dist = ((MainActivity)MainActivity.mContext).calculate_distance(35.88900, 128.6103, lat, lng);
-
     }
 }

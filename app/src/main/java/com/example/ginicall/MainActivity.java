@@ -83,6 +83,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        getWindow().setStatusBarColor(getResources().getColor(R.color.main_color));
+
         changeFragment(R.id.main_fragment, shelter_frag);
         navbar.setOnItemSelectedListener(item -> {
             FragmentManager fm = getSupportFragmentManager();
