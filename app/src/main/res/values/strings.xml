@@ -48,20 +48,23 @@
     <string name="tip_title_label3">3. 고층 건물에 있을 때</string>
     <string name="tip_title_label4">4. 사무실에 있을 때</string>
     <string name="tip_title_label5">5. 백화점‧마트에 있을 때</string>
-    <string name="tip_title_label6">6. 극장‧경기장에 있을 때</string>
-    <string name="tip_title_label7">7. 극장‧경기장에 있을 때</string>
-    <string name="tip_title_label8">8. 극장‧경기장에 있을 때</string>
-    <string name="tip_title_label9">9. 극장‧경기장에 있을 때</string>
 
-    <string name="tip_contents_label1_1">‧ 가구, 텔레비전 등 낙하물을 피해 탁자 아래로 들어가 탁자 다리를 꼭 잡고 머리와 몸을 보호합니다.</string>
-    <string name="tip_contents_label1_2">‧ 욕실에서는 몸을 낮추고 목욕대야, 수건, 목욕가운 등으로 머리와 몸을 보호합니다.</string>
-    <string name="tip_contents_label1_3">‧ 주방에서는 화재가 발생하지 않도록 가스를 차단합니다.</string>
 
-    <string name="tip_contents_label4">4. 사무실에 있을 때</string>
-    <string name="tip_contents_label5">5. 백화점‧마트에 있을 때</string>
-    <string name="tip_contents_label6">6. 극장‧경기장에 있을 때</string>
-    <string name="tip_contents_label7">7. 극장‧경기장에 있을 때</string>
-    <string name="tip_contents_label8">8. 극장‧경기장에 있을 때</string>
-    <string name="tip_contents_label9">9. 극장‧경기장에 있을 때</string>
+    <string name="tip_contents_label1_1">• 가구, 텔레비전 등 낙하물을 피해 탁자 아래로 들어가 탁자 다리를 꼭 잡고 머리와 몸을 보호합니다.</string>
+    <string name="tip_contents_label1_2">• 욕실에서는 몸을 낮추고 목욕대야, 수건, 목욕가운 등으로 머리와 몸을 보호합니다.</string>
+    <string name="tip_contents_label1_3">• 주방에서는 화재가 발생하지 않도록 가스를 차단합니다.</string>
+
+    <string name="tip_contents_label2_1">‧• 책상 아래로 들어가 몸을 웅크리고 책상 다리를 꼭 잡고 몸을 보호합니다.가구, 텔레비전 등 낙하물을 피해 탁자 아래로 들어가 탁자 다리를 꼭 잡고 머리와 몸을 보호합니다.</string>
+    <string name="tip_contents_label2_2">•	흔들림이 멈추면 선생님의 안내에 따라 질서를 지키며 운동장으로 대피합니다.</string>
+    <string name="tip_contents_label2_3">•	복도에서는 창문 유리가 깨질 우려가 있으니 창문과 떨어져 이동합니다.</string>
+
+    <string name="tip_contents_label3_1">•	높은 층의 건물일수록 흔들림이 크게 오래 지속될 수 있으므로 실내에서 떨어지는 물건에 더욱 주의해야 합니다.</string>
+
+    <string name="tip_contents_label4_1">•	사무실은 컴퓨터 본체, 모니터 등 무거운 물건들이 많아 다칠 위험이 큽니다.</string>
+    <string name="tip_contents_label4_2">•	사무실 책상 아래로 들어가 몸을 웅크리고 책상 다리를 꼭 잡고 몸을 보호합니다.</string>
+
+    <string name="tip_contents_label5_1">•	진열장에서 떨어지는 물건으로부터 몸을 보호합니다.</string>
+    <string name="tip_contents_label5_2">•	계단이나 기둥 근처로 피하고, 흔들림이 멈추면 안내에 따라 밖으로 대피합니다.</string>
+    <string name="tip_contents_label5_3">‧•	에스컬레이터를 타고 있다면, 손잡이를 잡고 앉아서 버틴 후 침착히 벗어납니다. 주방에서는 화재가 발생하지 않도록 가스를 차단합니다.</string>
 
 </resources>
